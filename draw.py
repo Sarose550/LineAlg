@@ -221,7 +221,7 @@ def hilbert(depth, screen):
 	    gustavo.pd()
 	    gustavo.movea(depth, depth, sidelength)
 
-hilbert(8, pixels)
+hilbert(7, pixels)
 
 for i in range(size):
     for j in range(size):
