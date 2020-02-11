@@ -15,8 +15,6 @@ def draw_line(x0, y0, x1, y1, screen, r, g, b):
 	if(x0 > x1): #octants 3 through 6
 		draw_line(x1, y1, x0, y0, screen, r, g, b)
 		return
-	if(x0 == x1 and y0 > y1):
-		draw_line(x1, y1, x0, y0, screen, r, g, b)
 	if(y1 - y0 <= x1 - x0 and y1 - y0 >= 0): #octant 1
 		x = x0
 		y = y0
@@ -63,12 +61,12 @@ def draw_line(x0, y0, x1, y1, screen, r, g, b):
 	elif(y1 - y0 < x0 - x1): #octant 7
 		x = -1*y0
 		y = x0
-		A = x1 - x0
+		A = x0 - x1
 		B = y1 - y0
 		d = 2*A + B
-		while(x <= -1*y1):
+		while(x <= y1):
 			#print("Plotting (" + str(-1*y) + ", " + str(x) + ")")
-			plot(screen, r, g, b, y, x)
+			plot(screen, r, g, b, y, -1 * x)
 			if(d > 0):
 				y += 1
 				d += 2*B
